@@ -4,10 +4,7 @@ global class ItemRestApi {
     @HttpPost
     global static void CreateItem(){
         RestRequest req = RestContext.request;
-        RestResponse res = RestContext.response;
-
-        res.addHeader('Content-Type', 'application/json');
-        
+                
         Blob bl = req.requestBody;
 
         List<String> names = (List<String>)JSON.deserialize(bl.toString(), List<String>.class);
